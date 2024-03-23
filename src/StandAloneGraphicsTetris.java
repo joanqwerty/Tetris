@@ -1,5 +1,5 @@
-import view.View;
-import view.graphics.GraphicsView;
+import views.View;
+import views.graphics.GraphicsView;
 
 public class StandAloneGraphicsTetris extends Tetris {
 

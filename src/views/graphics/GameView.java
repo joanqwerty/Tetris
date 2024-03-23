@@ -1,4 +1,4 @@
-package view.graphics;
+package views.graphics;
 
 import controllers.MoveController;
 import models.Game;
@@ -11,6 +11,8 @@ import java.awt.image.BufferStrategy;
 public class GameView extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 	private boolean isRunning = true;
+
+	public static final int FPS = 60;
 
 	private BoardView boardView;
 	private BlockView blockView;
@@ -42,11 +44,40 @@ public class GameView extends Canvas implements Runnable {
 	public void run() {
 		inputHandler();
 
+		double drawInterval = 1000000000 / FPS;
+		double delta = 0;
+		long lastTime = System.nanoTime();
+		long currentTime;
+		long timer = 0;
+		int drawCount = 0;
+
 		while (isRunning) {
-			if (moveController.isGameOver()) {
-				moveController.reset();
+
+			currentTime = System.nanoTime();
+			delta += (currentTime - lastTime) / drawInterval;
+			timer += currentTime - lastTime;
+
+			lastTime = currentTime;
+
+			if (delta >= 1) {
+				update();
+				render();
+				delta--;
+				drawCount++;
 			}
-			render();
+
+			if (timer >= 1000000000) {
+				System.out.println("FPS: " + drawCount);
+				drawCount = 0;
+				timer = 0;
+			}
+
+		}
+	}
+
+	public void update() {
+		if (moveController.isGameOver()) {
+			moveController.reset();
 		}
 	}
 
@@ -66,6 +97,5 @@ public class GameView extends Canvas implements Runnable {
 
 		g.dispose();
 		bs.show();
-
 	}
 }

@@ -1,4 +1,4 @@
-import view.View;
+import views.View;
 
 public abstract class Tetris {
 

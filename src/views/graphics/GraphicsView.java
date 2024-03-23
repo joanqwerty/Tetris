@@ -1,11 +1,11 @@
-package view.graphics;
+package views.graphics;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import view.View;
+import views.View;
 
 public class GraphicsView extends JFrame implements View {
 
