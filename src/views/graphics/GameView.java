@@ -1,12 +1,12 @@
 package views.graphics;
 
-import controllers.MoveController;
-import models.Game;
-
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+
+import controllers.GameController;
+import models.Game;
 
 public class GameView extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
@@ -17,7 +17,7 @@ public class GameView extends Canvas implements Runnable {
 	private BoardView boardView;
 	private BlockView blockView;
 
-	private MoveController moveController;
+	private GameController moveController;
 
 	private Game game;
 
@@ -27,7 +27,7 @@ public class GameView extends Canvas implements Runnable {
 
 	private void init() {
 		game = new Game();
-		moveController = new MoveController(game);
+		moveController = new GameController(game);
 		boardView = new BoardView(moveController);
 		blockView = new BlockView(moveController);
 	}

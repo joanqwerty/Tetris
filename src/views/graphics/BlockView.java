@@ -4,15 +4,15 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Polygon;
 
-import controllers.MoveController;
+import controllers.GameController;
 import models.Coordinate;
 
 public class BlockView {
 	public static final int WIDTH = 300;
 
-	MoveController moveController;
+	GameController moveController;
 
-	public BlockView(MoveController moveController) {
+	public BlockView(GameController moveController) {
 		this.moveController = moveController;
 	}
 

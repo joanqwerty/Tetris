@@ -6,7 +6,7 @@ import java.awt.Polygon;
 import java.util.Iterator;
 import java.util.Vector;
 
-import controllers.MoveController;
+import controllers.GameController;
 import models.Coordinate;
 
 public class BoardView {
@@ -26,9 +26,9 @@ public class BoardView {
 			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
 			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, };
 
-	private MoveController moveController;
+	private GameController moveController;
 
-	public BoardView(MoveController moveController) {
+	public BoardView(GameController moveController) {
 		this.moveController = moveController;
 		coordinates = new Vector<Coordinate>();
 	}

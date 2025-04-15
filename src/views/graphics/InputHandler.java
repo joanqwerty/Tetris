@@ -2,13 +2,13 @@ package views.graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import controllers.MoveController;
+import controllers.GameController;
 
 public class InputHandler implements KeyListener {
 
-	MoveController moveController;
+	GameController moveController;
 
-	public InputHandler(MoveController moveController) {
+	public InputHandler(GameController moveController) {
 		this.moveController = moveController;
 	}
 

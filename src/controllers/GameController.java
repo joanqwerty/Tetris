@@ -7,10 +7,10 @@ import models.Game;
 import models.Blocks.Block;
 import models.Blocks.Blocks;
 
-public class MoveController {
+public class GameController {
 	private Game game;
 
-	public MoveController(Game game) {
+	public GameController(Game game) {
 		this.game = game;
 	}
 
